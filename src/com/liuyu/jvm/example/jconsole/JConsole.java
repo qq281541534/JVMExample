@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 内存监控的示例代码
+ * args: -Xms100m -Xmx100m -XX:+UseSerialGC
  * Created by liuyu on 15-4-21.
  */
 public class JConsole {
@@ -15,6 +17,7 @@ public class JConsole {
     public static void fillHeap(int num) throws InterruptedException {
         List<OOMObject> list = new ArrayList<OOMObject>();
         for(int i = 0; i < num; i++){
+            //稍作延迟，令监视曲线的变化更加明显
             Thread.sleep(50);
             list.add(new OOMObject());
         }
